@@ -1,1 +1,1 @@
-# The non-yet-existent homepage for Hanson Lu
+# The not-yet-existent homepage for Hanson Lu
