@@ -1,0 +1,44 @@
+/* styles.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.container {
+    position: relative;
+    width: 80vw; /* 80% of the viewport width */
+    height: 60vh; /* 60% of the viewport height */
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.image-left, .image-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-left img, .image-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-right {
+    right: 0;
+    opacity: 0;
+}
+
+.image-left {
+    left: 0;
+    opacity: 1;
+}
