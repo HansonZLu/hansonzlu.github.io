@@ -12,8 +12,8 @@ body, html {
 
 .container {
     position: relative;
-    width: 80vw; /* 80% of the viewport width */
-    height: 60vh; /* 60% of the viewport height */
+    width: 100vw; /* Changed from 80vw to take full width */
+    height: 100vh; /* Changed from 60vh to take full height */
     display: flex;
     justify-content: space-between;
     overflow: hidden;
