@@ -77,17 +77,29 @@ body, html {
     right: 30px;
 }
 
-.menu-rect {
-    width: 100%;
-    height: 100%;
-    transition: all 0.3s ease;
+/* Hamburger Icon */
+.hamburger-icon {
+    width: 40px;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.left .menu-rect {
+.line {
+    display: block;
+    height: 5px;
+    width: 100%;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Colored lines for each side */
+.left .hamburger-icon .line {
     background-color: #87CEEB; /* Light blue for left menu */
 }
 
-.right .menu-rect {
+.right .hamburger-icon .line {
     background-color: #8B4513; /* Brown for right menu */
 }
 

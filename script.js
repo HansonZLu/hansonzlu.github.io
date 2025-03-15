@@ -9,6 +9,7 @@ const leftMenu = document.getElementById('left-menu');
 const rightMenu = document.getElementById('right-menu');
 const leftPanel = document.getElementById('left-panel');
 const rightPanel = document.getElementById('right-panel');
+const container = document.querySelector('.container');
 
 // Track menu state
 let leftMenuOpen = false;
@@ -71,9 +72,38 @@ function toggleRightMenu() {
     }
 }
 
-// Event listeners for menu icons
-leftMenu.addEventListener('click', toggleLeftMenu);
-rightMenu.addEventListener('click', toggleRightMenu);
+// Close menus when clicking outside
+document.addEventListener('click', (event) => {
+    // Check if the click was outside the menu panels and menu icons
+    const clickedOnLeftMenu = leftMenu.contains(event.target);
+    const clickedOnRightMenu = rightMenu.contains(event.target);
+    const clickedOnLeftPanel = leftPanel.contains(event.target);
+    const clickedOnRightPanel = rightPanel.contains(event.target);
+    
+    // If click is outside both menus and panels, close any open menu
+    if (!clickedOnLeftMenu && !clickedOnRightMenu && !clickedOnLeftPanel && !clickedOnRightPanel) {
+        if (leftMenuOpen) {
+            leftMenuOpen = false;
+            leftPanel.classList.remove('expanded');
+        }
+        
+        if (rightMenuOpen) {
+            rightMenuOpen = false;
+            rightPanel.classList.remove('expanded');
+        }
+    }
+});
+
+// Prevent propagation of click events on menu icons (to prevent immediate closing)
+leftMenu.addEventListener('click', (event) => {
+    event.stopPropagation();
+    toggleLeftMenu();
+});
+
+rightMenu.addEventListener('click', (event) => {
+    event.stopPropagation();
+    toggleRightMenu();
+});
 
 // Initialize the left side as active on page load
 window.addEventListener('DOMContentLoaded', () => {
