@@ -4,24 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website</title>
+    <!-- Link to our custom styles -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Link to Font Awesome for additional icons if needed -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Main container that holds the entire layout -->
     <div class="container">
-        <!-- Left side -->
+        <!-- Left side - Dark gray background -->
         <div class="left-side">
+            <!-- Hamburger menu icon in top left corner -->
             <div class="menu-icon left" id="left-menu">
+                <!-- Three-line hamburger icon created with spans -->
                 <div class="hamburger-icon">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
+                    <span class="line"></span> <!-- First line of hamburger -->
+                    <span class="line"></span> <!-- Second line of hamburger -->
+                    <span class="line"></span> <!-- Third line of hamburger -->
                 </div>
             </div>
+            
+            <!-- Content area that displays the left image -->
+            <!-- This has opacity:0 by default, but becomes visible when active -->
             <div class="content-area" id="left-content">
-                <img src="102-positive-positive.jpg" alt="Left Image" class="main-image">
+                <img src="201.jpg" alt="Left Image" class="main-image">
             </div>
+            
+            <!-- Menu panel that slides in from left when hamburger is clicked -->
             <div class="menu-panel left-panel" id="left-panel">
+                <!-- Navigation items in the menu -->
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
@@ -31,19 +42,27 @@
             </div>
         </div>
         
-        <!-- Right side -->
+        <!-- Right side - Light gray background -->
         <div class="right-side">
+            <!-- Hamburger menu icon in top right corner -->
             <div class="menu-icon right" id="right-menu">
+                <!-- Three-line hamburger icon created with spans -->
                 <div class="hamburger-icon">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
+                    <span class="line"></span> <!-- First line of hamburger -->
+                    <span class="line"></span> <!-- Second line of hamburger -->
+                    <span class="line"></span> <!-- Third line of hamburger -->
                 </div>
             </div>
+            
+            <!-- Content area that displays the right image -->
+            <!-- This has opacity:0 by default, but becomes visible when active -->
             <div class="content-area" id="right-content">
-                <img src="HL_05195.jpg" alt="Right Image" class="main-image">
+                <img src="928.jpg" alt="Right Image" class="main-image">
             </div>
+            
+            <!-- Menu panel that slides in from right when hamburger is clicked -->
             <div class="menu-panel right-panel" id="right-panel">
+                <!-- Navigation items in the menu -->
                 <ul>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Blog</a></li>
@@ -53,6 +72,8 @@
             </div>
         </div>
     </div>
+    
+    <!-- Link to our JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>

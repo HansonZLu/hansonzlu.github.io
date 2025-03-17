@@ -1,165 +1,201 @@
-/* Base Styles */
+/* ==================
+   BASE STYLES
+   ================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Makes sure padding and borders are included in element width */
 }
 
 body, html {
-    height: 100%;
-    overflow: hidden;
-    font-family: 'Arial', sans-serif;
+    height: 100%; /* Take up full height of viewport */
+    overflow: hidden; /* Prevents scrollbars */
+    font-family: 'Arial', sans-serif; /* Default font */
 }
 
-/* Container */
+/* ==================
+   CONTAINER LAYOUT
+   ================== */
 .container {
     width: 100%;
-    height: 100vh;
-    display: flex;
+    height: 100vh; /* 100% of the viewport height */
+    display: flex; /* Creates a flexbox layout for side-by-side sections */
 }
 
-/* Split Sides */
+/* ==================
+   SPLIT SIDES
+   ================== */
+/* Styles for both left and right sides */
 .left-side, .right-side {
-    position: relative;
-    width: 50%;
+    position: relative; /* Allows positioning of child elements */
+    width: 50%; /* Each side takes exactly half of the container */
     height: 100%;
-    overflow: hidden;
-    transition: width 0.5s ease;
+    overflow: hidden; /* Ensures content doesn't overflow */
+    transition: width 0.5s ease; /* Smooth transition for width changes */
 }
 
+/* Left side background color */
 .left-side {
     background-color: #222222; /* Dark gray for left side */
 }
 
+/* Right side background color */
 .right-side {
     background-color: #e0e0e0; /* Light gray for right side */
 }
 
-/* Content Areas */
+/* ==================
+   CONTENT AREAS
+   ================== */
 .content-area {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    position: absolute;
+    display: flex; /* Centers the image */
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease; /* Smooth fade in/out */
+    position: absolute; /* Positioned absolutely within parent */
     top: 0;
     left: 0;
 }
 
+/* Image styling */
 .main-image {
-    max-width: 80%;
-    max-height: 80%;
-    object-fit: contain;
+    max-width: 80%; /* Limits image width */
+    max-height: 80%; /* Limits image height */
+    object-fit: contain; /* Maintains aspect ratio */
 }
 
-/* Menu Icons */
+/* ==================
+   MENU ICONS
+   ================== */
 .menu-icon {
-    position: absolute;
-    top: 30px;
+    position: absolute; /* Positioned absolutely within parent */
+    top: 30px; /* Distance from top */
     width: 60px;
     height: 60px;
-    cursor: pointer;
-    z-index: 100;
+    cursor: pointer; /* Shows pointer cursor on hover */
+    z-index: 100; /* Ensures it's above other elements */
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Smooth transition for any changes */
 }
 
+/* Left menu positioning */
 .menu-icon.left {
-    left: 30px;
+    left: 30px; /* Distance from left */
 }
 
+/* Right menu positioning */
 .menu-icon.right {
-    right: 30px;
+    right: 30px; /* Distance from right */
 }
 
-/* Hamburger Icon */
+/* ==================
+   HAMBURGER ICON
+   ================== */
 .hamburger-icon {
-    width: 40px;
-    height: 35px;
+    width: 30px;
+    height: 25px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: column; /* Stack lines vertically */
+    justify-content: space-between; /* Space lines evenly */
 }
 
+/* Individual lines in hamburger icon */
 .line {
     display: block;
-    height: 5px;
+    height: 3px;
     width: 100%;
-    border-radius: 3px;
-    transition: all 0.3s ease-in-out;
+    border-radius: 3px; /* Slightly rounded edges */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
 
-/* Colored lines for each side */
+/* Colors for left hamburger icon lines */
 .left .hamburger-icon .line {
     background-color: #87CEEB; /* Light blue for left menu */
 }
 
+/* Colors for right hamburger icon lines */
 .right .hamburger-icon .line {
     background-color: #8B4513; /* Brown for right menu */
 }
 
-/* Menu Panels */
+/* ==================
+   MENU PANELS
+   ================== */
 .menu-panel {
     position: absolute;
     top: 0;
-    width: 0;
+    width: 0; /* No width initially - hidden */
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    overflow: hidden;
-    transition: width 0.5s ease;
-    z-index: 90;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    overflow: hidden; /* Hides content when collapsed */
+    transition: width 0.5s ease; /* Smooth sliding animation */
+    z-index: 90; /* Above content but below menu icons */
 }
 
+/* Left menu panel positioning */
 .left-panel {
     left: 0;
 }
 
+/* Right menu panel positioning */
 .right-panel {
     right: 0;
 }
 
+/* Menu navigation list */
 .menu-panel ul {
-    list-style: none;
-    padding: 100px 50px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    list-style: none; /* Removes bullet points */
+    padding: 100px 50px; /* Top/bottom and left/right padding */
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.3s ease; /* Fade in effect */
 }
 
+/* Menu list items */
 .menu-panel ul li {
-    margin: 20px 0;
+    margin: 20px 0; /* Vertical spacing between items */
 }
 
+/* Menu links */
 .menu-panel ul li a {
     color: white;
-    text-decoration: none;
+    text-decoration: none; /* Removes underline */
     font-size: 24px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Smooth color change on hover */
 }
 
+/* Left panel link hover effect */
 .left-panel ul li a:hover {
-    color: #87CEEB; /* Light blue for left menu */
+    color: #87CEEB; /* Light blue for left menu items on hover */
 }
 
+/* Right panel link hover effect */
 .right-panel ul li a:hover {
-    color: #8B4513; /* Brown for right menu */
+    color: #8B4513; /* Brown for right menu items on hover */
 }
 
-/* Menu Panel Expanded State */
+/* ==================
+   EXPANDED MENU STATE
+   ================== */
+/* When menu panel is expanded */
 .menu-panel.expanded {
-    width: 300px;
+    width: 300px; /* Width when expanded */
 }
 
+/* Show menu items when expanded */
 .menu-panel.expanded ul {
-    opacity: 1;
+    opacity: 1; /* Visible when expanded */
 }
 
-/* Active Side */
+/* ==================
+   ACTIVE STATES
+   ================== */
+/* Show content when side is active */
 .left-side.active .content-area,
 .right-side.active .content-area {
-    opacity: 1;
+    opacity: 1; /* Fully visible */
 } 
